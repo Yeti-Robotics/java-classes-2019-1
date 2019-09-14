@@ -31,7 +31,8 @@ public class HelloWorld {
         int[] emptyArray = new int[5];
         System.out.println(emptyArray[2]);
 
-        for (int i = 0; i < integerArray.length; i++) {
+        int i = 0;
+        for (i = 0; i < integerArray.length; i++) {
             System.out.println(integerArray[i]);
         }
     }
