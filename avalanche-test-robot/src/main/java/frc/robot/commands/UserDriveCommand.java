@@ -15,8 +15,8 @@ public class UserDriveCommand extends Command {
 
     @Override
     protected void execute() {
-        Robot.drivetrainSubsystem.driveLeftSide(Robot.m_oi.leftJoystick.getY());
-        Robot.drivetrainSubsystem.driveRightSide(Robot.m_oi.rightJoystick.getY());
+        Robot.drivetrainSubsystem.tankDrive(-Robot.m_oi.leftJoystick.getY(),
+            -Robot.m_oi.rightJoystick.getY());
     }
 
     @Override

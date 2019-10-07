@@ -8,6 +8,9 @@
 package frc.robot;
 
 import edu.wpi.first.wpilibj.Joystick;
+import edu.wpi.first.wpilibj.buttons.JoystickButton;
+import frc.robot.commands.DriveForTimeCommand;
+import frc.robot.commands.DrivePathCommandGroup;
 
 /**
  * This class is the glue that binds the controls on the physical operator
@@ -20,5 +23,11 @@ public class OI {
     public OI() {
         leftJoystick = new Joystick(RobotMap.LEFT_JOYSTICK);
         rightJoystick = new Joystick(RobotMap.RIGHT_JOYSTICK);
+
+        JoystickButton driveForwardButton = new JoystickButton(leftJoystick, 2);
+        JoystickButton drivePathButton = new JoystickButton(rightJoystick, 2);
+
+        driveForwardButton.whenPressed(new DriveForTimeCommand(0.4, 0.4, 3));
+        drivePathButton.whenPressed(new DrivePathCommandGroup());
     }
 }
